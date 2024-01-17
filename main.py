@@ -20,9 +20,33 @@ def check_valid_roman_numeral(roman: str) -> bool:
 
 
 def numeral_to_word(number: int) -> str:
-    print(number)
+    temp = number
+    word = ''
+    while temp != 0:
+        if temp // 1000 != 0:
+            word += 'M'
+            temp -= 1000
+        elif temp // 500 != 0:
+            word += 'D'
+            temp -= 500
+        elif temp // 100 != 0:
+            word += 'C'
+            temp -= 100
+        elif temp // 50 != 0:
+            word += 'L'
+            temp -= 50
+        elif temp // 10 != 0:
+            word += 'X'
+            temp -= 10
+        elif temp // 5 != 0:
+            word += 'V'
+            temp -= 5
+        elif temp // 1 != 0:
+            word += 'I'
+            temp -= 1
+    return word
 
 
 if __name__ == "__main__":
-    numeral_to_word(4)
+    print(numeral_to_word(3123))
     print(word_to_numeral("IX"))
