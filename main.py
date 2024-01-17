@@ -20,8 +20,10 @@ def check_valid_roman_numeral(roman: str) -> bool:
 
 
 def numeral_to_word(number: int) -> str:
-    temp = number
     word = ''
+    temp = abs(number)
+    if number < 0:
+        word += '-'
     while temp != 0:
         if temp // 1000 != 0:
             word += 'M'

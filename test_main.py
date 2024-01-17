@@ -1,5 +1,5 @@
 import pytest
-from main import word_to_numeral, check_valid_roman_numeral
+from main import word_to_numeral, check_valid_roman_numeral, numeral_to_word
 
 
 def test_nine_as_word_goes_numeral():
@@ -16,6 +16,11 @@ def test_word_too_high_is_invalid():
 def test_negative_number_is_valid():
     word = "-MCLXI"
     assert word_to_numeral(word) == -1161
+
+
+def test_negative_number_to_word_is_valid():
+    number = -1161
+    assert numeral_to_word(number) == "-MCLXI"
 
 
 def test_four_repetitive_letters_is_invalid():
