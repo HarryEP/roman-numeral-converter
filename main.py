@@ -15,5 +15,14 @@ def word_to_numeral(roman: str) -> int:
     return total
 
 
-if __name__ == "__main__":
+def check_valid_roman_numeral(roman: str) -> bool:
     pass
+
+
+def numeral_to_word(number: int) -> str:
+    print(number)
+
+
+if __name__ == "__main__":
+    numeral_to_word(4)
+    print(word_to_numeral("IX"))
