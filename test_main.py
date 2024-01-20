@@ -27,3 +27,8 @@ def test_four_repetitive_letters_is_invalid():
     word = "MCDCCXXX"
     with pytest.raises(Exception):
         add_new_letter(word, 'X')
+
+
+def test_numbers_with_nines_in_them():
+    number = 2999
+    assert test_numbers_with_nines_in_them == 'MMCMXCIX'
