@@ -15,10 +15,6 @@ def word_to_numeral(roman: str) -> int:
     return total
 
 
-def check_valid_roman_numeral(roman: str) -> bool:
-    pass
-
-
 def numeral_to_word(number: int) -> str:
     word = ''
     temp = abs(number)
@@ -26,7 +22,7 @@ def numeral_to_word(number: int) -> str:
         word += '-'
     while temp != 0:
         if temp // 1000 != 0:
-            word += 'M'
+            word = add_new_letter(word, 'M')
             temp -= 1000
         elif temp // 500 != 0:
             word += 'D'
@@ -47,6 +43,18 @@ def numeral_to_word(number: int) -> str:
             word += 'I'
             temp -= 1
     return word
+
+
+def add_new_letter(roman: str, letter: str) -> str:
+    if len(roman) >= 3:
+        if roman[-3] == letter and roman[-2] == letter and roman[-1] == letter:
+            raise Exception(
+                "You cannot have 4 letters in a row for a roman numeral")
+        else:
+            roman += letter
+    else:
+        roman += letter
+    return roman
 
 
 if __name__ == "__main__":
