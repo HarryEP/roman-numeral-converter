@@ -4,14 +4,19 @@ def word_to_numeral(roman: str) -> int:
                    "L": 50, "C": 100, "D": 500, "M": 1000}
     total = 0
     length = len(roman)
+    negative = False
     for i, letter in enumerate(roman):
         if i == length - 1:
             total += conversions[letter]
+        elif letter == '-':
+            negative = True
         else:
             if conversions[letter] < conversions[roman[i + 1]]:
                 total -= conversions[letter]
             else:
                 total += conversions[letter]
+    if negative:
+        total = 0 - total
     return total
 
 
