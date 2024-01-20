@@ -25,22 +25,22 @@ def numeral_to_word(number: int) -> str:
             word = add_new_letter(word, 'M')
             temp -= 1000
         elif temp // 500 != 0:
-            word += 'D'
+            word += add_new_letter(word, 'D')
             temp -= 500
         elif temp // 100 != 0:
-            word += 'C'
+            word += add_new_letter(word, 'C')
             temp -= 100
         elif temp // 50 != 0:
-            word += 'L'
+            word += add_new_letter(word, 'L')
             temp -= 50
         elif temp // 10 != 0:
-            word += 'X'
+            word += add_new_letter(word, 'X')
             temp -= 10
         elif temp // 5 != 0:
-            word += 'V'
+            word += add_new_letter(word, 'V')
             temp -= 5
         elif temp // 1 != 0:
-            word += 'I'
+            word += add_new_letter(word, 'I')
             temp -= 1
     return word
 
