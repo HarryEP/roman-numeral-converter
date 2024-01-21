@@ -58,7 +58,7 @@ def numeral_to_word(number: int) -> str:
                 word = add_new_letter(word, 'X')
                 temp -= 10
         elif temp // 5 != 0:
-            if (temp + 100) // 500 != 0:
+            if (temp + 1) // 10 != 0:
                 word += 'IX'
                 temp -= 9
             else:
