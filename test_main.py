@@ -31,4 +31,9 @@ def test_four_repetitive_letters_is_invalid():
 
 def test_numbers_with_nines_in_them():
     number = 2999
-    assert test_numbers_with_nines_in_them == 'MMCMXCIX'
+    assert numeral_to_word(number) == 'MMCMXCIX'
+
+
+def word_to_number_with_nines():
+    word = 'MMCMXCIX'
+    assert word_to_numeral(word) == 2999
