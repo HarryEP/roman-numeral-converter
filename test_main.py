@@ -34,6 +34,6 @@ def test_numbers_with_nines_in_them():
     assert numeral_to_word(number) == 'MMCMXCIX'
 
 
-def word_to_number_with_nines():
+def test_word_to_number_with_nines():
     word = 'MMCMXCIX'
     assert word_to_numeral(word) == 2999
