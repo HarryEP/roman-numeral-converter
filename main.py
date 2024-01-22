@@ -15,6 +15,8 @@ def word_to_numeral(roman: str) -> int:
                 total -= conversions[letter]
             else:
                 total += conversions[letter]
+    if total > 3999:
+        raise ValueError("Invalid Number")
     if negative:
         total = 0 - total
     return total
