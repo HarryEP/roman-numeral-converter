@@ -1,3 +1,6 @@
+'''Roman numeral conversion from word to number or number to word'''
+
+
 def word_to_numeral(roman: str) -> int:
     """complete the solution by transforming the roman numeral into an integer"""
     conversions = {"I": 1, "V": 5, "X": 10,
@@ -23,6 +26,7 @@ def word_to_numeral(roman: str) -> int:
 
 
 def numeral_to_word(number: int) -> str:
+    '''converts numbers in int format to a string roman number'''
     word = ''
     temp = abs(number)
     if number < 0:
@@ -78,6 +82,7 @@ def numeral_to_word(number: int) -> str:
 
 
 def add_new_letter(roman: str, letter: str) -> str:
+    '''adds a new letter while confirming 4 letters don't repeat'''
     if len(roman) >= 3:
         if roman[-3] == letter and roman[-2] == letter and roman[-1] == letter:
             raise Exception(
