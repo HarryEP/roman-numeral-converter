@@ -77,7 +77,6 @@ def numeral_to_word(number: int) -> str:
             else:
                 word = add_new_letter(word, 'I')
                 temp -= 1
-        print(word, temp)
     return word
 
 
