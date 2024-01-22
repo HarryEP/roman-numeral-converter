@@ -29,6 +29,12 @@ def test_four_repetitive_letters_is_invalid():
         add_new_letter(word, 'X')
 
 
+def test_too_high_number():
+    number = 7841
+    with pytest.raises(Exception):
+        numeral_to_word(number)
+
+
 def test_numbers_with_nines_in_them():
     number = 2999
     assert numeral_to_word(number) == 'MMCMXCIX'
